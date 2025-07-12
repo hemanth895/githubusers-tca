@@ -20,7 +20,7 @@ struct RepositoriesFeature {
     }
     
     enum Action {
-       case onAppear
+        case onAppear
         case repositoriesResponse(Result<[Repository], Error>)
     }
     

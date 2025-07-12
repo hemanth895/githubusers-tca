@@ -8,7 +8,6 @@
 import Foundation
 import ComposableArchitecture
 
-import Foundation
 
 // Custom error types for better error handling
 enum GitHubAPIError: Error, LocalizedError {

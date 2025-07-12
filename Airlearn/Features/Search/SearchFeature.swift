@@ -8,6 +8,13 @@
 import Foundation
 import ComposableArchitecture
 
+ enum CancelID: Hashable, Sendable {
+    case search 
+    case refresh
+    case loadMore 
+}
+
+
 @Reducer
 struct SearchFeature {
     
@@ -54,12 +61,6 @@ struct SearchFeature {
     }
     
     @Dependency(\.gitHubAPI) var gitHubAPI
-    
-    private enum CancelID {
-        case search 
-        case refresh
-        case loadMore 
-    }
     
     var body: some Reducer<State, Action>{
         Reduce { state, action in
