@@ -114,17 +114,19 @@ Temporary Items
 .apdisk
 
 # Xcode Patch
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata/
-!*.xcodeproj/project.xcworkspace/
-*.xcodeproj/project.xcworkspace/xcshareddata/
-
-# Bundler
-.bundle
-vendor/
-
-# Add any other custom directories or files you want to ignore
-# For example, if you have a specific directory structure for TCA
-LocalPods/
-Dependencies/TCA/
+*.xcodeproj
+/*
+ !*.xcodeproj/project.pbxproj
+ !*.xcodeproj/xcshareddata/
+ !*.xcodeproj/project.xcworkspace/
+ *.xcodeproj/project.xcworkspace/xcshareddata/
+ 
+ # Bundler
+ .bundle
+ vendor/
+ 
+ # Add any other custom directories or files you want to ignore
+ # For example, if you have a specific directory structure for TCA
+ LocalPods/
+ Dependencies/TCA/
+ */

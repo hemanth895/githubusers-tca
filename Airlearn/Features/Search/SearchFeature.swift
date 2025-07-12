@@ -72,7 +72,7 @@ struct SearchFeature {
                     state.totalCount = 0
                     if text.isEmpty {
                         state.users = []
-                        return .cancel(id: CancelID.search)
+                        return .cancel(id: "search")
                     }
                     return .none
                     
@@ -87,7 +87,7 @@ struct SearchFeature {
                             Result { try await gitHubAPI.searchUsers(searchText,1 , 30)}
                         ))
                     }
-                    .cancellable(id: CancelID.search)
+                    .cancellable(id: "search")
                     
                 case .refreshUsers:
                     guard !state.searchText.isEmpty else { return .none }
@@ -99,7 +99,7 @@ struct SearchFeature {
                             Result { try await gitHubAPI.searchUsers(searchText, 1, 30)}
                         ))
                     }
-                    .cancellable(id: CancelID.refresh)
+                    .cancellable(id: "refresh")
                     
                 case .loadMoreUsers:
                     guard state.canLoadMore else { return .none }
@@ -111,7 +111,7 @@ struct SearchFeature {
                             Result { try await gitHubAPI.searchUsers(searchText, nextPage, 30)}
                         ))
                     }
-                    .cancellable(id: CancelID.loadMore)
+                    .cancellable(id: "loadMore")
 
                 case let .searchResponse(.success(result)):
                     state.isLoading = false
